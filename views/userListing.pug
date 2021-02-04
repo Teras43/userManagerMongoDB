@@ -1,0 +1,21 @@
+html
+    head
+    link(rel="stylesheet", href="./styles.css")
+    script(defer, src="./generalFunc.js")
+    body
+        form(method="get", action="/")
+            button(id="back", type="submit") Back
+        table
+            tr
+                th(class="borderClass") Name
+                th(class="borderClass") Email
+                th(class="borderClass") Age
+                th(class="borderClass")
+            each user in data
+                tr
+                    td(class="borderClass") #{user.name}
+                    td(class="borderClass") #{user.email}
+                    td(class="borderClass") #{user.age}
+                    td(class="borderClass")
+                        button(type="button", onclick=`goToEdit('${user.id}')`) Edit
+                        button(type="button", onclick=`deleteUser('${user.id}')`) Delete

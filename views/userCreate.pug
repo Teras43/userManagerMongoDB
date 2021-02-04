@@ -1,0 +1,15 @@
+html
+    head
+    body
+        form(method="post", action="/createUser")
+            div
+                label(for="name") Name
+                input(id="name", name="name")
+            div
+                label(for="email") Email
+                input(id="email", name="email", type="email")
+            div
+                label(for="age") Age
+                input(id="age", name="age")
+            div
+                input(type="submit")

@@ -1,0 +1,15 @@
+html
+    head
+    body
+        form(method="post", action=`/updateUser?userid=${data.id}`)
+            div
+                label(for="name") Name
+                input(id="name", name="name", value=`${data.name}`)
+            div
+                label(for="email") Email
+                input(id="email", name="email", type="email", value=`${data.email}`)
+            div
+                label(for="age") Age
+                input(id="age", name="age", value=`${data.age}`)
+            div
+                input(id="submit", name="submit", type="submit" value="Save")
