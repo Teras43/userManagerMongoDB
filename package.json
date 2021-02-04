@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Teras43/simpleUserManager#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "mongoose": "^5.11.15",
     "pug": "^3.0.0",
     "uuid": "^8.3.2"
   }

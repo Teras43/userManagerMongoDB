@@ -1,19 +1,40 @@
 const express = require("express");
+// const mongoose = require("mongoose");
 const fs = require("fs");
 const port = process.env.PORT || 3000;
+const app = express();
+const { v4: uuidv4 } = require("uuid");
+
+// const dbConnectionString = "mongodb://localhost/usermanagermongodb";
+// mongoose.connect(dbConnectionString, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+// });
+// const udb = mongoose.connection;
+// udb.on("error", console.error.bind(console, "connection error"));
+// udb.once("open", () => {
+//     console.log("db connected");
+// });
 
 let allUsers;
 let user = {};
-
-const app = express();
-
-const { v4: uuidv4 } = require("uuid");
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("./views"));
 
 app.set("views", "./views");
 app.set("view engine", "pug");
+
+// const userSchema = mongoose.Schema({
+//     userId: {
+//         id: String,
+//         name: String,
+//         email: String,
+//         age: Number,
+//     },
+// });
+
+// const singleUser = mongoose.model("singleUser", userSchema);
 
 app.get("/", (req, res) => {
     res.render("userCreate");
@@ -33,15 +54,16 @@ app.get("/editUser", (req, res) => {
 
 app.post("/createUser", (req, res) => {
     user.id = uuidv4();
-    user.name = req.body.name;
+    user.firstName = req.body.firstName;
+    user.lastName = req.body.lastName;
     user.email = req.body.email;
     user.age = req.body.age;
-    if (!user.name || !user.email || !user.age) {
+    if (!user.firstName || !user.lastName || !user.email || !user.age) {
         res.redirect("/");
         console.log("Redirecting");
         return;
     }
-    if (!!user.name) {
+    if (!!user.firstName) {
         readJson()
             .then((data) => {
                 data[user.id] = user;
@@ -61,7 +83,8 @@ app.post("/createUser", (req, res) => {
 
 app.post("/updateUser", (req, res) => {
     const foundUser = allUsers[req.query.userid];
-    foundUser.name = req.body.name;
+    foundUser.firstName = req.body.firstName;
+    foundUser.lastName = req.body.lastName;
     foundUser.age = req.body.age;
     foundUser.email = req.body.email;
 

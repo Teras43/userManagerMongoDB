@@ -7,13 +7,15 @@ html
             button(id="back", type="submit") Back
         table
             tr
-                th(class="borderClass") Name
+                th(class="borderClass") First Name
+                th(class="borderClass") Last Name
                 th(class="borderClass") Email
                 th(class="borderClass") Age
                 th(class="borderClass")
             each user in data
                 tr
-                    td(class="borderClass") #{user.name}
+                    td(class="borderClass") #{user.firstName}
+                    td(class="borderClass") #{user.lastName}
                     td(class="borderClass") #{user.email}
                     td(class="borderClass") #{user.age}
                     td(class="borderClass")
