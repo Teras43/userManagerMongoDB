@@ -9,6 +9,7 @@ mongoose.connect(dbConnectionString, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
+mongoose.set("useFindAndModify", false);
 const udb = mongoose.connection;
 udb.on("error", console.error.bind(console, "connection error"));
 udb.once("open", () => {
@@ -52,7 +53,6 @@ app.get("/editUser", (req, res) => {
     const paramId = req.query.userid;
     user.findOne({ id: paramId }, (err, data) => {
         if (err) console.error(err);
-        console.log(data);
         res.render("userEdit", { data: data });
     });
 });
