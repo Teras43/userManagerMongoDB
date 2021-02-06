@@ -3,3 +3,36 @@
     border: 3px solid black;
     padding: 5px;
 }
+
+#pageContainerListing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.topListingBlock {
+    display: flex;
+    justify-content: space-around;
+    max-width: 60%;
+    width: 100%;
+    margin-top: 100px;
+}
+
+#pageContainerCreate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.backButtonCreate {
+    display: flex;
+    width: 20%;
+}
+
+.createForm {
+    display: flex;
+    border: 1px solid black;
+    padding: 10px;
+    align-items: center;
+}
