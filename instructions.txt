@@ -1,1 +1,9 @@
 To start the app:
+
+1. Open Compass to access the MongoDB and start a connection by clicking "Fill in connection fields individually".
+2. In this page, if it says localhost in the Hostname field, you can leave the port default as well and click "Connect" to create the connection.
+3. Create a database with the name "usermanagermongodb" and the collection with the name "users" by clicking "Create Database" in the top left.
+4. Go into the database and then the collection you've just created and 
+#. Once you have the file cloned from github, open up the terminal and type "npm i" to install all dependencies.
+#. Afterwards in the terminal, type node app.js or nodemon app.js 
+    (Node would work better due to the server restarting when users are created with nodemon.)

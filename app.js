@@ -1,10 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const fs = require("fs");
 const port = process.env.PORT || 3000;
 const app = express();
 const { v4: uuidv4 } = require("uuid");
-const { request } = require("http");
 
 const dbConnectionString = "mongodb://localhost/usermanagermongodb";
 mongoose.connect(dbConnectionString, {
@@ -16,8 +14,6 @@ udb.on("error", console.error.bind(console, "connection error"));
 udb.once("open", () => {
     console.log("db connected");
 });
-
-let allUsers;
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("./views"));
@@ -161,49 +157,3 @@ app.post("/deleteUser", (req, res) => {
 app.listen(port, () => {
     console.log(`Server is running. Listening on port: ${port}`);
 });
-
-function readJson() {
-    return new Promise((resolve, reject) => {
-        fs.readFile("allUsers.json", (err, data) => {
-            if (err) reject(err);
-            allUsers = JSON.parse(data);
-            resolve(allUsers);
-        });
-    });
-}
-
-function writeJson(data) {
-    return new Promise((resolve, reject) => {
-        fs.writeFileSync("allUsers.json", JSON.stringify(data));
-        resolve();
-    });
-}
-
-const initializeJSON = () => {
-    fs.readFile("allUsers.json", (err, data) => {
-        if (err) {
-            writeEmptyJSON();
-
-            return;
-        }
-        if (data.length) {
-            const existingData = JSON.parse(data);
-            if (!existingData) {
-                writeEmptyJSON();
-            } else {
-                console.log("Existing JSON found.");
-            }
-        } else {
-            writeEmptyJSON();
-        }
-    });
-};
-
-const writeEmptyJSON = () => {
-    writeJson({})
-        .then(() => {
-            console.log("JSON initialized.");
-        })
-        .catch(console.error);
-};
-initializeJSON();

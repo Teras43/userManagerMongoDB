@@ -10,6 +10,8 @@ html
                 div(id="sortDiv") Sort: 
                     button(type="button", onclick=`sortAsc()`) &#8593;
                     button(type="button", onclick=`sortDesc()`) &#8595;
+                form(method="get", action="/")
+                    button(type="submit") Home
                 form(method="get", action="/userSearch")
                     input(id="search", name="search", placeholder="First Name / Last Name")
                     input(type="submit", value="Search")
