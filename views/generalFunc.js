@@ -11,5 +11,13 @@ function deleteUser(id) {
 }
 
 function goToEdit(id) {
-    window.location = `/editUser?userid=${id}`;
+    window.location.href = `/editUser?userid=${id}`;
+}
+
+function sortAsc() {
+    window.location.href = "/sortAsc";
+}
+
+function sortDesc() {
+    window.location.href = "/sortDesc";
 }

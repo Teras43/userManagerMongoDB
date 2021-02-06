@@ -3,21 +3,31 @@ html
     link(rel="stylesheet", href="./styles.css")
     script(defer, src="./generalFunc.js")
     body
-        form(method="get", action="/")
-            button(id="back", type="submit") Back
+        form(method="get", action="/userCreate")
+            button(id="back", type="submit") Create User
+        div(id="sortDiv") Sort: 
+            button(type="button", onclick=`sortAsc()`) &#8593;
+            button(type="button", onclick=`sortDesc()`) &#8595;
+        form(method="get", action="/userSearch")
+            input(id="search", name="search", placeholder="First Name / Last Name")
+            input(type="submit", value="Search")
         table
             tr
                 th(class="borderClass") First Name
                 th(class="borderClass") Last Name
                 th(class="borderClass") Email
                 th(class="borderClass") Age
-                th(class="borderClass")
-            each user in data
+                th(class="borderClass") Password
+                th(class="borderClass") Role
+                th(class="borderClass") Actions
+            each user in users
                 tr
                     td(class="borderClass") #{user.firstName}
                     td(class="borderClass") #{user.lastName}
                     td(class="borderClass") #{user.email}
                     td(class="borderClass") #{user.age}
+                    td(class="borderClass") #{user.password}
+                    td(class="borderClass") #{user.role}
                     td(class="borderClass")
                         button(type="button", onclick=`goToEdit('${user.id}')`) Edit
                         button(type="button", onclick=`deleteUser('${user.id}')`) Delete
