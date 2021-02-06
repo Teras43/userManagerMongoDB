@@ -1,0 +1,101 @@
+{
+    "8abd94c2-ab74-4e71-9755-d20267f55614": {
+        "id": "8abd94c2-ab74-4e71-9755-d20267f55614",
+        "firstName": "Brandon",
+        "lastName": "Curtis",
+        "email": "Brandcurtis43@gmail.com",
+        "age": "27",
+        "password": "4K3ld4m4P3r1ph3ry11",
+        "role": "Teacher"
+    },
+    "f790de25-44a8-45c5-b3e6-58e6ed8216d1": {
+        "id": "f790de25-44a8-45c5-b3e6-58e6ed8216d1",
+        "firstName": "Nick",
+        "lastName": "Dombrosky",
+        "email": "ndombrosky@gmail.com",
+        "age": "27",
+        "password": "r4nd0mp4$$w0Rd",
+        "role": "Student"
+    },
+    "fd1191c7-ae94-4c1d-9b13-d5112ee872b6": {
+        "id": "fd1191c7-ae94-4c1d-9b13-d5112ee872b6",
+        "firstName": "Devin",
+        "lastName": "Curtis",
+        "email": "devcurtis34@gmail.com",
+        "age": "25",
+        "password": "1Ns0Mn1um34G0j1R4",
+        "role": "Teacher"
+    },
+    "1ab50c41-6c14-42bf-9867-826560792686": {
+        "id": "1ab50c41-6c14-42bf-9867-826560792686",
+        "firstName": "Bob",
+        "lastName": "Ross",
+        "email": "bobross@gmail.com",
+        "age": "40",
+        "password": "P41nt1nG1$fun",
+        "role": "Teacher"
+    },
+    "36310d3e-eb8a-4b31-9775-324010924c49": {
+        "id": "36310d3e-eb8a-4b31-9775-324010924c49",
+        "firstName": "Eli",
+        "lastName": "Hartman",
+        "email": "ehartgo@gmail.com",
+        "age": "21",
+        "password": "$t0rY0FT3CH",
+        "role": "Student"
+    },
+    "bbb377a2-4e1b-42d1-bdf8-b2f423275b2c": {
+        "id": "bbb377a2-4e1b-42d1-bdf8-b2f423275b2c",
+        "firstName": "Mach",
+        "lastName": "Willis",
+        "email": "mwill10@gmail.com",
+        "age": "46",
+        "password": "password",
+        "role": "Administrator"
+    },
+    "d56dd8ec-d668-488e-afd5-5bb68f098b7d": {
+        "id": "d56dd8ec-d668-488e-afd5-5bb68f098b7d",
+        "firstName": "James",
+        "lastName": "Sunderland",
+        "email": "jamessunderland@silenthill.com",
+        "age": "35",
+        "password": "Iseethattown...",
+        "role": "Janitor"
+    },
+    "6358d895-fdf0-43c3-a671-618c50929815": {
+        "id": "6358d895-fdf0-43c3-a671-618c50929815",
+        "firstName": "Kazama",
+        "lastName": "Kiryu",
+        "email": "kkiryu@gmail.com",
+        "age": "46",
+        "password": "L1k34Dr4G0N",
+        "role": "Security"
+    },
+    "a3d14aab-60bf-4048-9e8b-dcc65b874f8e": {
+        "id": "a3d14aab-60bf-4048-9e8b-dcc65b874f8e",
+        "firstName": "Goro",
+        "lastName": "Majima",
+        "email": "majimagoro@gmail.com",
+        "age": "48",
+        "password": "KIRYU-CHAN",
+        "role": "Security"
+    },
+    "6c962e5f-c9bc-456c-82b9-86021ab464a8": {
+        "id": "6c962e5f-c9bc-456c-82b9-86021ab464a8",
+        "firstName": "Heather",
+        "lastName": "Mason",
+        "email": "hmason@gmail.com",
+        "age": "17",
+        "password": "Monsterstoyou",
+        "role": "Student"
+    },
+    "c3e22c62-f561-47c4-9e7f-8a10032ff4cf": {
+        "id": "c3e22c62-f561-47c4-9e7f-8a10032ff4cf",
+        "firstName": "John",
+        "lastName": "Dorian",
+        "email": "jdmd@sacredheart.com",
+        "age": "32",
+        "password": "EAGLE!",
+        "role": "Doctor"
+    }
+}

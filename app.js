@@ -4,17 +4,18 @@ const port = process.env.PORT || 3000;
 const app = express();
 const { v4: uuidv4 } = require("uuid");
 
-const dbConnectionString = "mongodb://localhost/usermanagermongodb";
-mongoose.connect(dbConnectionString, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
+const dbConnectionString =
+    "mongodb+srv://user1:12345@cluster0.t9yog.mongodb.net/test?retryWrites=true&w=majority";
+try {
+    mongoose.connect(
+        dbConnectionString,
+        { useNewUrlParser: true, useUnifiedTopology: true },
+        () => console.log("Mongoose is connected")
+    );
+} catch (e) {
+    console.log("could not connect");
+}
 mongoose.set("useFindAndModify", false);
-const udb = mongoose.connection;
-udb.on("error", console.error.bind(console, "connection error"));
-udb.once("open", () => {
-    console.log("db connected");
-});
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("./views"));
@@ -22,7 +23,7 @@ app.use(express.static("./views"));
 app.set("views", "./views");
 app.set("view engine", "pug");
 
-const userSchema = mongoose.Schema({
+const userSchema = new mongoose.Schema({
     id: String,
     firstName: String,
     lastName: String,
@@ -33,8 +34,6 @@ const userSchema = mongoose.Schema({
 });
 
 const user = mongoose.model("users", userSchema);
-
-user.createIndexes({ firstName: "text", lastName: "text" });
 
 app.get("/", (req, res) => {
     user.find({}, null, { lean: true }, (err, data) => {
@@ -81,10 +80,8 @@ app.get("/sortDesc", (req, res) => {
 
 app.get("/userSearch", (req, res) => {
     const requestQuery = String(req.query.search);
-    console.log(requestQuery);
     user.find({ $text: { $search: requestQuery } }, null, (err, data) => {
         if (err) console.error(err);
-        console.log(data);
         res.render("userListing", {
             users: data,
         });
