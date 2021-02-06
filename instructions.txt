@@ -1,6 +1,6 @@
 To start the app:
 
 1. Once you have the file cloned from github, open up the terminal and type "npm i" to install all dependencies.
-2. Afterwards in the terminal, type node app.js or nodemon app.js 
-    (Node would work better due to the server restarting when users are created with nodemon.)
+2. Afterwards in the terminal, type "node app.js" or "nodemon app.js". 
+    (Node would work better due to the server restarting when users are created / edited / deleted with nodemon.)
 3. Go to localhost:3000 and the app should be loaded and working.
